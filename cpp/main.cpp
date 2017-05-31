@@ -20,20 +20,20 @@ int main(int argc, char *argv[]) {
   const string lv = argv[2];
   
   // アノテーションファイルを指定します
-  const string fn_train_target = "target_lv" + lv + "_samp_1.csv";
+  const string fn_train_target = "target_lv" + lv + "_train_1.csv";
   const string fn_test_target = "target_lv" + lv + "_test_1.csv";
-  const string fn_train_ground = "groundtruth_lv" + lv + "_samp_1.csv";
+  const string fn_train_ground = "groundtruth_lv" + lv + "_train_1.csv";
   const string fn_test_ground = "groundtruth_lv" + lv + "_test_1.csv"; 
 
   
   // 学習データを読み込む
-  string fnTrainTar = dirData + "annotations/" + fn_train_target;
-  string fnTrainGrn = dirData + "annotations/" + fn_train_ground;
+  string fnTrainTar = dirData + "annotations/train_lv1/" + fn_train_target;
+  string fnTrainGrn = dirData + "annotations/train_lv1/" + fn_train_ground;
   CAlconDatabase traindata( dirData, fnTrainTar, fnTrainGrn );
 
   // テストデータを読み込む
-  string fnTestTar = dirData + "annotations/" + fn_test_target;
-  string fnTestGrn = dirData + "annotations/" + fn_test_ground;
+  string fnTestTar = dirData + "annotations/test_lv1/" + fn_test_target;
+  string fnTestGrn = dirData + "annotations/test_lv1/" + fn_test_ground;
   CAlconDatabase testdata( dirData, fnTestTar, fnTestGrn );
 
   // ターゲットごとに認識します

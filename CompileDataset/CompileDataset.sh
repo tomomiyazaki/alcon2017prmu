@@ -143,6 +143,36 @@ done
 cd $dirWork
 printf "done\n"
 
+# Copy CSV files to ../dataset/annotations for train/ and test/
+printf "Copying train/ and test/ ... "
+dirWorkAnnoTrain=$dirWorkAnno"/train_lv1"
+dirDataAnnoTrain=$dirDataAnno"/train_lv1"
+if [ ! -d $dirDataAnnoTrain ]; then mkdir $dirDataAnnoTrain; fi
+cd $dirWorkAnnoTrain
+for file in *.csv; do
+    fnS=$dirWorkAnnoTrain"/"$file
+    fnT=$dirDataAnnoTrain"/"$file
+    if [ ! -f $fnT -a -f $fnS ]; then
+        cp $fnS $fnT
+    fi
+done
+cd $dirWork
+
+dirWorkAnnoTest=$dirWorkAnno"/test_lv1"
+dirDataAnnoTest=$dirDataAnno"/test_lv1"
+if [ ! -d $dirDataAnnoTest ]; then mkdir $dirDataAnnoTest; fi
+cd $dirWorkAnnoTest
+for file in *.csv; do
+    fnS=$dirWorkAnnoTest"/"$file
+    fnT=$dirDataAnnoTest"/"$file
+    if [ ! -f $fnT -a -f $fnS ]; then
+        cp $fnS $fnT
+    fi
+done
+cd $dirWork
+
+printf "done\n"
+
 
 # Copy README.md to ../dataset
 printf "Copying README.md ... "

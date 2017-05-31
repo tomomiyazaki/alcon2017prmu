@@ -3,7 +3,7 @@ dirData = '/Users/tomo/src/alcon2017/dataset/';
 
 % テストデータを読み込む
 % サンプルでは小さいデータセットを読み込んでいます。
-fn_test_target = [ dirData, 'annotations/target_lv1_test_1.csv' ];
+fn_test_target = [ dirData, 'annotations/test_lv1/target_lv1_test_1.csv' ];
 [ test_ids, test_dids, test_rects] = ReadTargets( fn_test_target );
 
 % Process each testdata

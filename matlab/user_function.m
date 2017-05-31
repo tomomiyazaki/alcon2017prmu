@@ -52,10 +52,10 @@ if( exist( fnModel, 'file' ) )
 end
 
 % Get training data
-fn = [ dirData, 'annotations/groundtruth_lv1_samp_1.csv' ];
+fn = [ dirData, 'annotations/train_lv1/groundtruth_lv1_train_1.csv' ];
 [ train_ids, train_codes ] = ReadGroundtruth( fn );
 
-fn = [ dirData, 'annotations/target_lv1_samp_1.csv' ];
+fn = [ dirData, 'annotations/train_lv1/target_lv1_train_1.csv' ];
 [ ~, train_dids, train_rects] = ReadTargets( fn );
 
 % Extract features
